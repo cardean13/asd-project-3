@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	
+	
+
+<items>
+	<person1>
+		<First Name>Charlie</First Name>
+		<Last Name>Tritch</Last Name>
+		<Sex>Female</Sex>
+		<Age>39</Age>
+		<Is the borrower reliable?>No</Is the borrower reliable?>
+		<Do they have a job?>Yes</Do they have a job?>
+		<If broken, could they replace it?>Yes</If broken, could they replace it?>
+		<Do you fully trust them?>No</Do you fully trust them?>
+		<Group>PS3</Group>
+		<Disc Name>Heavenly Sword</Disc Name>
+		<Value>$8</Value>
+		<Date Lent>2012-2-13</Date Lent>
+		<Expected Return Date>2012-6-6</Expected Return Date>
+		<Anymore Information?>She's my employee.</Anymore Information?>
+	</person1>
+	<person2>
+		<First Name>Brittany</First Name>
+		<Last Name>Gilmore</Last Name>
+		<Sex>Female</Sex>
+		<Age>19</Age>
+		<Is the borrower reliable?>Yes</Is the borrower reliable?>
+		<Do they have a job?>Yes</Do they have a job?>
+		<If broken, could they replace it?>Yes</If broken, could they replace it?>
+		<Do you fully trust them?>Yes</Do you fully trust them?>
+		<Group>DVD</Group>
+		<Disc Name>Blue Plant</Disc Name>
+		<Value>$80</Value>
+		<Date Lent>2012-3-9</Date Lent>
+		<Expected Return Date>2012-6-16</Expected Return Date>
+		<Anymore Information?>Katie's Friend.</Anymore Information?>
+	</person2>
+	<person3>
+		<First Name>Joan</First Name>
+		<Last Name>Hassan</Last Name>
+		<Sex>Female</Sex>
+		<Age>59</Age>
+		<Is the borrower reliable?>Yes</Is the borrower reliable?>
+		<Do they have a job?>No</Do they have a job?>
+		<If broken, could they replace it?>Yes</If broken, could they replace it?>
+		<Do you fully trust them?>Yes</Do you fully trust them?>
+		<Group>Blu-Ray</Group>
+		<Disc Name>Wall-E</Disc Name>
+		<Value>$12</Value>
+		<Date Lent>2012-5-17</Date Lent>
+		<Expected Return Date>2012-5-31</Expected Return Date>
+		<Anymore Information?>Meine Mutter.</Anymore Information?>
+	</person3>
+	<person4>
+		<First Name>Kyle</First Name>
+		<Last Name>Rawaneh</Last Name>
+		<Sex>Male</Sex>
+		<Age>42</Age>
+		<Is the borrower reliable?>No</Is the borrower reliable?>
+		<Do they have a job?>Yes</Do they have a job?>
+		<If broken, could they replace it?>No</If broken, could they replace it?>
+		<Do you fully trust them?>No</Do you fully trust them?>
+		<Group>Wii</Group>
+		<Disc Name>Smash Brothers Brawl</Disc Name>
+		<Value>$10</Value>
+		<Date Lent>2010-9-14</Date Lent>
+		<Expected Return Date>2012-7-28</Expected Return Date>
+		<Anymore Information?>Friend of the family.</Anymore Information?>
+	</person4>
+	<person5>
+		<First Name>Jason</First Name>
+		<Last Name>Baum</Last Name>
+		<Sex>Male</Sex>
+		<Age>31</Age>
+		<Is the borrower reliable?>Yes</Is the borrower reliable?>
+		<Do they have a job?>Yes</Do they have a job?>
+		<If broken, could they replace it?>Yes</If broken, could they replace it?>
+		<Do you fully trust them?>Yes</Do you fully trust them?>
+		<Group>PS3</Group>
+		<Disc Name>Uncharted</Disc Name>
+		<Value>$18</Value>
+		<Date Lent>2012-8-1</Date Lent>
+		<Expected Return Date>2012-10-04</Expected Return Date>
+		<Anymore Information?>My lead guitarist.</Anymore Information?>
+	</person5>
+</items>
+	
