@@ -1,7 +1,9 @@
 //Yusef Hassan
 //ASD 0712
 //Project 2
+$(document).ready(function(){
 
+//$("#base").on("pageinit", function(){})
 
 $(function(){
 
@@ -19,10 +21,10 @@ $(function(){
 //wait till DOM is ready
 
 	//get element by ID function
-	function e(x){
+/*	function e(x){
 		var elemental = document.getElementById(x);
 		return elemental;
-	}
+	}*/
 	
 	//create select field element, populate with options
 	/*function wheelHouse(){
@@ -45,25 +47,25 @@ $(function(){
 	}
 	
 	function getCheckBoxValue(){
-		if(e("reliable").checked){
+		if($("reliable").checked){
 			reliableValue = e("reliable").value;
 		}else{
 			reliableValue = "No"
 		}
 
-		if(e("job").checked){
+		if($("job").checked){
 			jobValue = e("job").value;
 		}else{
 			jobValue = "No"
 		}
 		
-		if(e("replace").checked){
+		if($("replace").checked){
 			replaceValue = e("replace").value;
 		}else{
 			replaceValue = "No"
 		}
 
-		if(e("trust").checked){
+		if($("trust").checked){
 			trustValue = e("trust").value;
 		}else{
 			trustValue = "No"
@@ -77,8 +79,8 @@ $(function(){
 		
 		switch(n){
 			case "on":
-				$("#foot").css = (displayNone)
-				$("#allInfo").css = (displayInline)
+				$("#foot").hide();
+				$("#allInfo").show();
 				$("#accountInfo").css = (displayNone)
 				$("#remove").css = (displayInline)
 				$("#allAccounts").css = (displayNone)
@@ -128,36 +130,34 @@ $(function(){
 		toggleControls("on");
 		if(localStorage.length === 0){
 			alert("No saved accounts, default data added.");
-			window.location.reload();
+			window.location.reload();  //('#listview').listview('refresh');
 			return false;
 		}
-		$("#allInfo").append($("#info2"));
+	//	$("#allInfo").append($("#info2"));
 		
 		
-		$("form.input").append("#items")
-        ;
-        $('#items').css({
-        	'display': 'block'
-        });
 		//document.body.appendChild(makeDiv);
+	
 		
 		for(var i = 0, len = localStorage.length; i<len; i++){
-			var makeli = document.createElement("li");
-			var linksLi = document.createElement("li");
+			var contact = $('<li class="singleContact"></li>').appendTo("#allInfo");
+			//var makeli = document.createElement("li");
+			//var linksLi = document.createElement("li");
 			
-			makeList.appendChild(makeli);
+			//makeList.appendChild(makeli);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			var obj = JSON.parse(value);
-			var makeSubList = document.createElement("ul");
-			makeli.appendChild(makeSubList);
+			//var makeSubList = document.createElement("ul");
+			//makeli.appendChild(makeSubList);
 	//		getImage(obj.group[1], makeSubList);
 			for(var n in obj){
-				var makeSubli = document.createElement("li");
-				makeSubList.appendChild(makeSubli);
-				var optSubText = obj[n][0]+" "+obj[n][1];
-				makeSubli.innerHTML = optSubText;
-				makeSubList.appendChild(linksLi);
+				$('<p>' + obj[n][0]+'</p>').appendTo(contact);
+				//var makeSubli = document.createElement("li");
+				//makeSubList.appendChild(makeSubli);
+				//var optSubText = obj[n][0]+" "+obj[n][1];
+				//makeSubli.innerHTML = optSubText;
+				//makeSubList.appendChild(linksLi);
 			}
 			makeItemLinks(key);
 		}
@@ -179,22 +179,22 @@ $(function(){
 	var makeItemLinks = function (key) {
 		
 		
-		var editLink = document.createElement("a");
+	/*	var editLink = document.createElement("a");
 		editLink.href = "#";
 		editLink.key = key;
 		var editText = "Edit Info";
 		$(editLink).bind("click", editItem);
 		editLink.innerHTML = editText;
-		linksLi.appendChild(editLink);
+		linksLi.appendChild(editLink);*/
 		
-		var deleteLink = document.createElement("a");
+	/*	var deleteLink = document.createElement("a");
 		deleteLink.href = "#";
 		deleteLink.key = key;
 		var deleteText = "Delete Info";
 		$(deleteLink).bind("click", deleteItem);
 		deleteLink.innerHTML = deleteText;
 		linksLi.appendChild(deleteLink);
-	}
+	}*/
 	
 	function editItem(){
 		var value = localStorage.getItem(this.key);
@@ -260,13 +260,13 @@ $(function(){
 	}
 	
 	function validate(d){
-		var getDname = e("dname");
-		var getFname = e("fname");
-		var getLname = e("lname");
+		var getDname = $("#dname");
+		var getFname = $("#fname");
+		var getLname = $("#lname");
 		
-			getDname.style.border = "1px solid black";
-			getFname.style.border = "1px solid black";
-			getLname.style.border = "1px solid black";
+			getDname.css = "1px solid black";
+			getFname.css = "1px solid black";
+			getLname.css = "1px solid black";
 
 		var message = [];
 
@@ -321,3 +321,4 @@ $(function(){
 	$("#allAccounts").on("click", getData);
 	$("#submit").on("click", validate);
 
+}})
