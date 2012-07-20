@@ -1,24 +1,30 @@
 // Paste your code in here!
+
+
+
+
+
+// Paste your code in here!
 //Yusef Hassan
 //ASD 0712
 //Project 2
 $(document).ready(function(){
-    var aiform = $("#addAccount"),
-    var reliableValue = "No",
+    var aiform = $("#accountInfo"),
+    reliableValue = "No",
         jobValue = "No",
         replaceValue = "No",
         trustValue = "No",
         sexValue,
-                    var id = Math.floor(Math.random()*100000001),
-                    
+        id = Math.floor(Math.random()*100000001);
+});      
 
     
 
 //$("#base").on("pageinit", function(){})
 
-$(function(){
+function validate(){
 
-    
+    var aiform;
     aiform.validate({
     
         invalidHandler: function (form, validator){},
@@ -26,7 +32,7 @@ $(function(){
             var data = aiform.serializeArray();
         }
     });
-});
+};
 
 //wait till DOM is ready
 
@@ -61,6 +67,10 @@ $(function(){
     function getCheckBoxValue(){
      
     ;
+    var reliableValue,
+        jobValue,
+        replaceValue,
+        trustValue;
         if($("reliable").checked){
             reliableValue = $("reliable").value;
         }else{
@@ -112,22 +122,25 @@ $(function(){
         }
     }
     
+    $("#addAccount").on("pageinit", function(){
+          var  id = Math.floor(Math.random()*100000001);
+
     function saveData(key){
         if(!key){
-            var id = Math.floor(Math.random()*100000001);
-        }else{
-            id = key;
+             id = Math.floor(Math.random()*100000001);
+        }else{ 
+           id = key;
+           
         }
         getSelectedRadio();
         getCheckBoxValue();        
         var item = {};
-       
         var reliableValue = "No",
         jobValue = "No",
         replaceValue = "No",
         trustValue = "No"
     ;
-
+            var sexValue;
             item.fname =["First Name:", $("#fname").val()];
             item.lname =["Last Name:", $("#lname").val()];
             item.sex =["Sex:", sexValue];
@@ -146,7 +159,6 @@ $(function(){
         localStorage.setItem(id, JSON.stringify(item));
         alert("Information Logged");
     }
-    
     var getData = function(){
         toggleControls("on");
         if(localStorage.length === 0){
@@ -158,7 +170,8 @@ $(function(){
         
         
         //document.body.appendChild(makeDiv);
-    
+               var makeItemLinks = function (key) {};
+
         
         for(var i = 0, len = localStorage.length; i<len; i++){
             var contact = $('<li class="singleContact"></li>').appendTo("#allInfo");
@@ -169,7 +182,7 @@ $(function(){
             var key = localStorage.key(i);
             var value = localStorage.getItem(key);
             var obj = JSON.parse(value);
-            //var makeSubList = document.createElement("ul");
+  //var makeSubList = document.createElement("ul");
             //makeli.appendChild(makeSubList);
     //        getImage(obj.group[1], makeSubList);
             for(var n in obj){
@@ -179,14 +192,13 @@ $(function(){
                 //var optSubText = obj[n][0]+" "+obj[n][1];
                 //makeSubli.innerHTML = optSubText;
                 //makeSubList.appendChild(linksLi);
-            }
-            makeItemLinks(key);
-        }
-    };
+            }                      makeItemLinks(key);
+           };
+           
     function autoFillData(){
-        for(var n in json){
+        for(var n in JSON){
             var id = Math.floor(Math.random()*100000001);
-            localStorage.setItem(id, JSON.stringify(json[n]));
+            localStorage.setItem(id, JSON.stringify(JSON[n]));
         }
     }
     function getImage(catName, makeSubList){
@@ -197,7 +209,6 @@ $(function(){
         imageLi.append(newImg);
     }
     //make Item links function, creates edit and delete links
-    var makeItemLinks = function (key) {
         
         
     /*    var editLink = document.createElement("a");
@@ -252,13 +263,14 @@ $(function(){
         $("#rdate").value(item.rdate[1]);
         $("#comments").value(item.comments[1]);
         
-        $(save).unbind("click", saveData);
+        $(saveData).unbind("click", saveData);
         $("#submit").value = "Edit Contact";
         var editSubmit = $("#submit");
         $(editSubmit).on("click", validate);
         editSubmit.key = this.key;
     }
-    
+        };
+
     function deleteItem(){
         var ask = confirm("Delete contact?");
         if (ask){
@@ -336,10 +348,4 @@ $(function(){
     $("#allAccounts").on("click", getData);
     $("#submit").on("click", validate);
 
-};
-
-
-
-
-
-
+});
